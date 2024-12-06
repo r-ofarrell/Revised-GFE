@@ -8,5 +8,5 @@ tmp/
 build
 htmlcov
 __pycache__/
-venv/
-/config/db.sqlite3
+.venv/
+db.sqlite3
