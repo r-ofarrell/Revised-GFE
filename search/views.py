@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-def search_page_view(request):
-    return render(request, "search.html")
+class SearchPageView(TemplateView):
+    template_name = "search.html"
 
-def create_gfe_view(request):
-    return render(request, "create_gfe.html")
+class CreateGFEView(TemplateView):
+    template_name = "create_gfe.html"

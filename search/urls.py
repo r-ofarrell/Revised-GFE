@@ -2,9 +2,9 @@
 
 from django.urls import path
 
-from .views import search_page_view, create_gfe_view
+from .views import SearchPageView, CreateGFEView
 
 urlpatterns = [
-    path("", search_page_view),
-    path("create/", create_gfe_view),
+    path("", SearchPageView.as_view()),
+    path("create/", CreateGFEView.as_view()),
 ]
