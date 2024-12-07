@@ -10,3 +10,4 @@ htmlcov
 __pycache__/
 .venv/
 db.sqlite3
+/search/migrations/
