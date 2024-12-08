@@ -61,8 +61,10 @@ class Estimate(models.Model):
     client = models.ForeignKey(Client, on_delete=models.PROTECT)
     therapist = models.ForeignKey(Therapist, on_delete=models.PROTECT)
     date_of_estimate = models.DateTimeField()
-    service = models.ManyToManyField(Service, through="EstimateDetails", through_fields=("estimate", "service"))
-    estimate_provided = models.BooleanField(default=True)
+    service = models.ManyToManyField(
+        Service, through="EstimateDetails", through_fields=("estimate", "service")
+    )
+    estimate_provided = models.BooleanField(db_default=True)
 
 
 class EstimateDetails(models.Model):

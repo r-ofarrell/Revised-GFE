@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.db.models import Q
 from django.views.generic import TemplateView, ListView
 
-from .models import Client
+from .models import Client, Estimate, EstimateDetails
 
 
 class SearchPageView(TemplateView):
@@ -21,6 +21,14 @@ class SearchResultsView(ListView):
             Q(first_name__icontains=first_name) | Q(last_name__icontains=last_name)
         )
         return names_list
+
+
+class ClientEstimatesView(ListView):
+    template_name = "client_estimates.html"
+
+    def get_queryset(self):
+        self.client = get_object_or_404(Client, name=self.kwargs["id"])
+        return Estimate.objects.filter(client=self.client)
 
 
 class CreateGFEView(TemplateView):
