@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<div class="flex-container">
+  <h2>Create new client</h2>
+  <div class="form">
+    <div class="input">
+      <form>
+        <label for="first-name">First name</label>
+        <input name="first-name" type="text" value="" />
+        <label for="last-name">Last name</label>
+        <input name="last-name" type="text" value="" />
+        <label for="dob">Date of birth</label>
+        <input name="dob" type="text" value="" />
+        <label for="email">Email</label>
+        <input name="email" type="text" value="" />
+        <label for="phone">Phone number</label>
+        <input name="phone" type="text" value="" />
+        <label for="street">Street address</label>
+        <input name="street" type="text" value="" />
+        <label for="apt-bldg-ste">Apt/Bldg/Ste</label>
+        <input name="apt-bldg-ste" type="text" value="" />
+        <label for="city">City</label>
+        <input name="city" type="text" value="" />
+        <label for="state">State</label>
+        <input name="state" type="text" value="" />
+        <label for="zip">Zip</label>
+        <input name="zip" type="text" value="" />
+      </form>
+      {% endblock %}
+    </div>
+  </div>
+</div>
