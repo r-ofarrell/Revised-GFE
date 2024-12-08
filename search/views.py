@@ -31,5 +31,9 @@ class ClientEstimatesView(ListView):
         return Estimate.objects.filter(client=self.client)
 
 
+class CreateNewClientView(TemplateView):
+    template_name = "create_client.html"
+
+
 class CreateGFEView(TemplateView):
     template_name = "create_gfe.html"

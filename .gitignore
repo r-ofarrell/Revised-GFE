@@ -12,3 +12,4 @@ __pycache__/
 db.sqlite3
 /search/migrations/
 pyrightconfig.json
+user_storie.md
