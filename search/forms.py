@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from ..create_client.models import Client
+from create_client.models import Client
 
 
 class SearchClient(ModelForm):

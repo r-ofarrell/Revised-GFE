@@ -1,5 +1,7 @@
 from django.db import models
 
+from create_client.models import Client
+
 
 class Therapist(models.Model):
     first_name = models.CharField(max_length=100)

@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.views.generic import TemplateView, ListView
 
 from .models import Estimate, EstimateDetails
-from ..create_client.models import Client
+from create_client.models import Client
 
 
 class SearchPageView(TemplateView):
