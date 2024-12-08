@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Client, Therapist, Service, Location, Estimate, EstimateDetails
+from .models import Therapist, Service, Location, Estimate, EstimateDetails
+from ..create_client.models import Client
 
 admin.site.register(Client)
 admin.site.register(Therapist)

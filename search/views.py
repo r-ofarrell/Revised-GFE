@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.db.models import Q
 from django.views.generic import TemplateView, ListView
 
-from .models import Client, Estimate, EstimateDetails
+from .models import Estimate, EstimateDetails
+from ..create_client.models import Client
 
 
 class SearchPageView(TemplateView):
