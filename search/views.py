@@ -5,8 +5,10 @@ from django.views.generic import TemplateView, ListView
 
 from .models import Client
 
+
 class SearchPageView(TemplateView):
     template_name = "search.html"
+
 
 class SearchResultsView(ListView):
     model = Client
