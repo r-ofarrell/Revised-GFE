@@ -71,3 +71,6 @@ class EstimateDetails(models.Model):
     rate = models.IntegerField()
     quantity = models.IntegerField()
     location = models.ForeignKey(Location, on_delete=models.PROTECT)
+
+    class Meta:
+        verbose_name_plural = "Estimate Details"

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+        <h1>Search Results</h1>
+        <ul>
+            {% for name in object_list %}
+                <li>
+                    {{ name.first_name }} {{ name.last_name }}
+                </li>
+            {% endfor %}
+        </ul>
+{% endblock %}
