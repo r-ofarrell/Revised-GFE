@@ -3,7 +3,15 @@ from django.http import HttpResponse
 from django.db.models import Q
 from django.views.generic import TemplateView, ListView
 
-from .models import Client, Estimate, EstimateDetails
+from .models import Client, Estimate, EstimateServiceDetails
+
+
+class EstimateRenewalUpcomingView(ListView):
+    model = Estimate
+    template_name = "upcoming_renewals.html"
+
+    def get_query(self):
+        pass
 
 
 class SearchPageView(TemplateView):
