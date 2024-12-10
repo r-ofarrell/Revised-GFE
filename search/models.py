@@ -1,5 +1,5 @@
+from datetime import timedelta, datetime
 from django.db import models
-from django.db.models.functions import Now
 
 
 class Therapist(models.Model):
@@ -60,8 +60,16 @@ class Service(models.Model):
 
 
 class Estimate(models.Model):
+    RENEWAL_DATE_CHOICES = [
+        (datetime.now() + timedelta(days=30), "1 month"),
+        (datetime.now() + timedelta(days=90), "3 months"),
+        (datetime.now() + timedelta(days=180), "6 months"),
+        (datetime.now() + timedelta(days=270), "9 months"),
+        (datetime.now() + timedelta(days=365), "12 months"),
+    ]
     client = models.ForeignKey(Client, on_delete=models.PROTECT)
-    date_of_estimate = models.DateTimeField(db_default=Now())
+    date_of_estimate = models.DateTimeField(db_default=datetime.now())
+    renewal_date = models.DateTimeField(choices=RENEWAL_DATE_CHOICES)
     service = models.ManyToManyField(Service, through="EstimateServiceDetails")
     estimate_provided = models.BooleanField(db_default=True)
 

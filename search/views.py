@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.views.generic import TemplateView, ListView
 
 from .models import Client, Estimate, EstimateServiceDetails
